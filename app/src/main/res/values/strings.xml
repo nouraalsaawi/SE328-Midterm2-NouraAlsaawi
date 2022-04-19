@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SE328-Midterm2-NouraAlsaawi</string>
+    <string-array name="cities">
+        <item>Riyadh</item>
+        <item>Manaus</item>
+        <item>Ottawa</item>
+        <item>Tokyo</item>
+        <item>Athens</item>
+        <item>Manila</item>
+        <item>Paris</item>
+        <item>Moscow</item>
+    </string-array>
+</resources>
