@@ -81,12 +81,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return x;
     }
 
-    public Boolean deleteData (String id)
+    public Boolean deleteData (String data)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from "+TABLE_NAME+" where "+COL1+" = ?", new String[]{id});
+        Cursor cursor = DB.rawQuery("Select * from "+TABLE_NAME+" where "+COL1+" = ?", new String[]{data});
         if (cursor.getCount() > 0) {
-            long result = DB.delete(TABLE_NAME, COL1+"=?", new String[]{id});
+            long result = DB.delete(TABLE_NAME, COL1+"=?", new String[]{data});
             if (result == -1) {
                 return false;
             } else {
