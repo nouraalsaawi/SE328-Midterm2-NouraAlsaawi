@@ -33,7 +33,7 @@ import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
     String weatherWebserviceURL = "http://api.openweathermap.org/data/2.5/weather?q=alaska&appid=e3d28ef2d973071a35dea631944d11db&units=metric";
-    TextView temperature, humidity;
+    TextView temperature, humidity, city;
     Spinner cities;
     private TextView dateP;
 
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         temperature = findViewById(R.id.temperature);
         humidity = findViewById(R.id.humidity);
+        city= findViewById(R.id.cityName);
         cities=findViewById(R.id.citiesSpinner);
 
         cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -107,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Noura-temp:", String.valueOf(temp));
                 temperature.setText(Math.round(temp) +" °C");
                 humidity.setText(jsonMain.getDouble("humidity") +" %");
+                String townResponse=response.getString("name");
+                city.setText(townResponse);
 
 
                 JSONObject jsonSys = response.getJSONObject("sys");

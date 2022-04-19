@@ -21,11 +21,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/cityName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="London"
+        android:text="city"
         android:textColor="#616161"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/chooseDate"

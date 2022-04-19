@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,8 +37,17 @@ public class MainActivity3 extends AppCompatActivity {
                 String cursorLname = cursor.getString(2);
                 String cursorNatId = cursor.getString(3);
 
+                String searchForChar=cursorId+cursorName+cursorLname+cursorNatId.toCharArray();
+                // i dont have enough time to implement this, but the idea is to concatenate all column values into one string, turn the data to an array of chars as well
+                // then in a while (result), result is a boolean set to true at first, search through that string for a specific character that is inserted by the user
+                // then loop through the concatenated string of characters, for ex if searchForChar[0] = data[n], result=true, delete that user. else result=false and search through another user
+
+
+
 
                 MyDB.deleteData(dataInput.getText().toString());
+
+                Log.d("Noura","Successful delete");
                 Toasty.info(getBaseContext(), "Successful Delete of: "+cursorId + " " + cursorName + " " + cursorLname+" "+cursorNatId, Toast.LENGTH_SHORT, true).show();
 
             }
